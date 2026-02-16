@@ -24,7 +24,7 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 15px;
+            padding: 10px;
         }
 
         .poster {
@@ -33,11 +33,14 @@
             background: rgba(10, 12, 20, 0.85);
             backdrop-filter: blur(10px);
             border-radius: 60px 20px 60px 20px;
-            padding: 45px 40px;
+            padding: 40px 35px;
             border: 3px solid #ff6b9d;
             box-shadow: 0 0 30px #ff6b9d80, 0 0 0 2px #6b5bff inset, 0 0 0 4px #ffd966 inset;
             position: relative;
             overflow: hidden;
+            word-wrap: break-word;
+            overflow-wrap: break-word;
+            hyphens: auto;
         }
 
         /* ЯПОНСКИЙ ДЕКОР */
@@ -108,18 +111,19 @@
 
         /* ТИП СОБЫТИЯ */
         .event-type {
-            font-size: 0.9rem;
+            font-size: clamp(0.8rem, 2.5vw, 0.9rem);
             font-weight: 600;
             color: #ffd966;
-            letter-spacing: 6px;
+            letter-spacing: 4px;
             text-transform: uppercase;
             text-shadow: 0 0 10px #ffd966;
+            word-break: break-word;
         }
 
         /* НАЗВАНИЕ */
         .title-main {
             font-family: 'Unbounded', cursive;
-            font-size: 4.5rem;
+            font-size: clamp(2.5rem, 7vw, 4.5rem);
             font-weight: 900;
             line-height: 0.9;
             color: white;
@@ -128,11 +132,12 @@
                 0 0 30px #6b5bff,
                 4px 4px 0 #000;
             margin-bottom: 10px;
+            word-break: break-word;
         }
 
         .title-main span {
             display: block;
-            font-size: 2.5rem;
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
             color: #ffd966;
             text-shadow: 0 0 15px #ffd966;
             margin-top: 5px;
@@ -143,7 +148,7 @@
             background: rgba(255, 107, 157, 0.15);
             border: 2px solid #ff6b9d;
             border-radius: 80px 20px 80px 20px;
-            padding: 25px;
+            padding: 20px;
             margin: 15px 0;
             text-align: center;
             box-shadow: 0 0 30px #ff6b9d80;
@@ -151,32 +156,35 @@
 
         .date-day {
             font-family: 'Unbounded', cursive;
-            font-size: 4rem;
+            font-size: clamp(2.5rem, 6vw, 4rem);
             font-weight: 700;
             color: #ffffff;
             text-shadow: 0 0 15px #6b5bff;
             line-height: 1;
+            white-space: nowrap;
         }
 
         .date-month {
-            font-size: 1.8rem;
+            font-size: clamp(1.3rem, 4vw, 1.8rem);
             color: #ffd966;
             font-weight: 600;
-            letter-spacing: 4px;
+            letter-spacing: 3px;
+            white-space: nowrap;
         }
 
         .date-year {
-            font-size: 1.3rem;
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
             color: #aabbff;
             margin-top: 5px;
         }
 
         .time {
-            font-size: 2rem;
+            font-size: clamp(1.4rem, 4vw, 2rem);
             font-weight: 600;
             color: #ff6b9d;
             margin-top: 10px;
             text-shadow: 0 0 10px #ff6b9d;
+            white-space: nowrap;
         }
 
         /* МЕСТО */
@@ -184,22 +192,25 @@
             background: rgba(107, 91, 255, 0.1);
             border: 2px dashed #6b5bff;
             border-radius: 60px 10px 60px 10px;
-            padding: 25px;
+            padding: 20px;
             text-align: center;
+            word-break: break-word;
         }
 
         .venue-name {
             font-family: 'Unbounded', cursive;
-            font-size: 2rem;
+            font-size: clamp(1.5rem, 4vw, 2rem);
             font-weight: 600;
             color: white;
             margin-bottom: 5px;
+            word-break: break-word;
         }
 
         .venue-address {
-            font-size: 1.1rem;
+            font-size: clamp(0.95rem, 2.5vw, 1.1rem);
             color: #ccd5ff;
             margin-bottom: 15px;
+            word-break: break-word;
         }
 
         .map-link {
@@ -207,11 +218,12 @@
             background: transparent;
             border: 2px solid #6b5bff;
             color: white;
-            padding: 10px 25px;
+            padding: 8px 20px;
             border-radius: 60px;
             text-decoration: none;
-            font-size: 1rem;
+            font-size: 0.9rem;
             transition: 0.3s;
+            white-space: nowrap;
         }
 
         .map-link:hover {
@@ -225,72 +237,83 @@
             background: rgba(0, 0, 0, 0.3);
             backdrop-filter: blur(5px);
             border-radius: 60px 10px 60px 10px;
-            padding: 30px;
+            padding: 25px;
             border: 2px solid #ffd966;
             display: flex;
             flex-direction: column;
-            gap: 25px;
+            gap: 20px;
+            word-break: break-word;
         }
 
         /* ГОСТИ */
         .guests-title {
-            font-size: 1.2rem;
+            font-size: 1.1rem;
             color: #ffd966;
             text-transform: uppercase;
             letter-spacing: 3px;
             margin-bottom: 15px;
+            word-break: break-word;
         }
 
         .guest-item {
             display: flex;
             align-items: center;
-            gap: 15px;
-            margin-bottom: 20px;
+            gap: 12px;
+            margin-bottom: 15px;
+            flex-wrap: wrap;
         }
 
         .guest-avatar {
-            width: 50px;
-            height: 50px;
+            width: 45px;
+            height: 45px;
             background: linear-gradient(135deg, #ff6b9d, #6b5bff);
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            font-size: 1.5rem;
+            font-size: 1.3rem;
             border: 2px solid #ffd966;
+            flex-shrink: 0;
         }
 
         .guest-info {
             flex: 1;
+            min-width: 150px;
         }
 
         .guest-name {
             font-weight: 600;
-            font-size: 1.1rem;
+            font-size: 1rem;
+            word-break: break-word;
         }
 
         .guest-role {
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #ccd5ff;
+            word-break: break-word;
         }
 
         /* ПРОГРАММА */
         .program-item {
             display: flex;
             gap: 10px;
-            margin-bottom: 15px;
-            padding-bottom: 15px;
+            margin-bottom: 12px;
+            padding-bottom: 12px;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            flex-wrap: wrap;
         }
 
         .program-time {
             font-weight: 600;
             color: #ff6b9d;
-            min-width: 60px;
+            min-width: 55px;
+            white-space: nowrap;
         }
 
         .program-desc {
             color: #ffffff;
+            word-break: break-word;
+            flex: 1;
         }
 
         /* КОНКУРСЫ */
@@ -298,10 +321,11 @@
             background: rgba(255, 217, 102, 0.15);
             border: 1px solid #ffd966;
             border-radius: 60px;
-            padding: 12px 20px;
+            padding: 10px 15px;
             text-align: center;
             font-weight: 600;
             margin: 10px 0;
+            word-break: break-word;
         }
 
         /* ЦЕНА И КНОПКА */
@@ -311,14 +335,15 @@
 
         .price {
             font-family: 'Unbounded', cursive;
-            font-size: 2.8rem;
+            font-size: clamp(2rem, 5vw, 2.8rem);
             font-weight: 700;
             color: #ffd966;
             text-shadow: 0 0 20px #ffd966;
+            white-space: nowrap;
         }
 
         .price small {
-            font-size: 1rem;
+            font-size: 0.9rem;
             color: #aaa;
         }
 
@@ -327,15 +352,16 @@
             background: linear-gradient(135deg, #ff6b9d, #6b5bff);
             color: white;
             text-decoration: none;
-            padding: 18px;
+            padding: 15px 12px;
             border-radius: 60px;
-            font-size: 1.3rem;
+            font-size: clamp(1.1rem, 3vw, 1.3rem);
             font-weight: 700;
             text-align: center;
             margin: 20px 0;
             transition: 0.3s;
             border: 2px solid #ffd966;
             box-shadow: 0 0 30px #ff6b9d;
+            white-space: nowrap;
         }
 
         .ticket-btn:hover {
@@ -347,7 +373,7 @@
         .contacts {
             display: flex;
             justify-content: center;
-            gap: 15px;
+            gap: 12px;
             flex-wrap: wrap;
         }
 
@@ -355,14 +381,15 @@
             background: rgba(255, 255, 255, 0.05);
             border: 1px solid #ff6b9d;
             color: white;
-            padding: 10px 20px;
+            padding: 8px 15px;
             border-radius: 60px;
             text-decoration: none;
-            font-size: 0.95rem;
+            font-size: 0.85rem;
             transition: 0.3s;
             display: flex;
             align-items: center;
             gap: 5px;
+            white-space: nowrap;
         }
 
         .contact-link:hover {
@@ -378,29 +405,33 @@
             gap: 15px;
             background: rgba(0, 0, 0, 0.5);
             border-radius: 60px 10px 60px 10px;
-            padding: 15px;
+            padding: 12px;
             margin-top: 20px;
+            flex-wrap: wrap;
         }
 
         .qr-code {
-            width: 60px;
-            height: 60px;
+            width: 50px;
+            height: 50px;
             background: white;
             border-radius: 15px;
             display: flex;
             align-items: center;
             justify-content: center;
+            flex-shrink: 0;
         }
 
         .qr-code svg {
-            width: 50px;
-            height: 50px;
+            width: 40px;
+            height: 40px;
         }
 
         .qr-text {
             flex: 1;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
             color: #ccc;
+            min-width: 130px;
+            word-break: break-word;
         }
 
         .qr-text strong {
@@ -415,7 +446,8 @@
             padding-top: 20px;
             border-top: 1px solid rgba(255, 255, 255, 0.1);
             color: #999;
-            font-size: 0.85rem;
+            font-size: 0.8rem;
+            word-break: break-word;
         }
 
         /* АДАПТАЦИЯ */
@@ -425,7 +457,7 @@
             }
 
             .title-main {
-                font-size: 3.5rem;
+                font-size: 3rem;
             }
 
             .footer-note {
@@ -435,40 +467,45 @@
 
         @media (max-width: 600px) {
             .poster {
-                padding: 30px 20px;
+                padding: 25px 20px;
             }
 
             .title-main {
-                font-size: 2.8rem;
+                font-size: 2.5rem;
             }
 
             .title-main span {
-                font-size: 1.8rem;
+                font-size: 1.5rem;
             }
 
             .date-day {
-                font-size: 3rem;
+                font-size: 2.2rem;
+                white-space: normal;
             }
 
             .date-month {
-                font-size: 1.4rem;
+                font-size: 1.2rem;
+                white-space: normal;
             }
 
             .time {
-                font-size: 1.6rem;
+                font-size: 1.4rem;
+                white-space: normal;
             }
 
             .venue-name {
-                font-size: 1.6rem;
+                font-size: 1.4rem;
             }
 
             .price {
-                font-size: 2.2rem;
+                font-size: 1.8rem;
+                white-space: normal;
             }
 
             .ticket-btn {
-                font-size: 1.1rem;
-                padding: 15px;
+                font-size: 1rem;
+                padding: 12px;
+                white-space: normal;
             }
 
             .contacts {
@@ -477,33 +514,111 @@
 
             .contact-link {
                 justify-content: center;
+                white-space: normal;
             }
 
             .qr-section {
                 flex-direction: column;
                 text-align: center;
             }
+            
+            .map-link {
+                white-space: normal;
+                padding: 8px 15px;
+            }
+            
+            .program-item {
+                flex-direction: column;
+                gap: 5px;
+            }
+            
+            .program-time {
+                white-space: normal;
+            }
         }
 
         @media (max-width: 400px) {
+            .poster {
+                padding: 20px 15px;
+            }
+            
             .title-main {
-                font-size: 2.2rem;
+                font-size: 2rem;
             }
 
             .title-main span {
-                font-size: 1.4rem;
+                font-size: 1.3rem;
             }
 
             .date-day {
-                font-size: 2.5rem;
+                font-size: 1.8rem;
             }
 
+            .date-month {
+                font-size: 1rem;
+            }
+            
+            .venue-name {
+                font-size: 1.2rem;
+            }
+            
+            .venue-address {
+                font-size: 0.85rem;
+            }
+            
             .guest-item {
-                flex-wrap: wrap;
+                flex-direction: column;
+                text-align: center;
             }
+            
+            .guest-avatar {
+                margin: 0 auto;
+            }
+            
+            .guest-info {
+                text-align: center;
+            }
+            
+            .price {
+                font-size: 1.5rem;
+            }
+            
+            .price small {
+                font-size: 0.7rem;
+            }
+            
+            .qr-text {
+                font-size: 0.7rem;
+            }
+        }
 
-            .program-item {
-                flex-wrap: wrap;
+        @media (max-width: 350px) {
+            .title-main {
+                font-size: 1.6rem;
+            }
+            
+            .title-main span {
+                font-size: 1.1rem;
+            }
+            
+            .date-day {
+                font-size: 1.5rem;
+            }
+            
+            .date-month {
+                font-size: 0.9rem;
+            }
+            
+            .time {
+                font-size: 1.2rem;
+            }
+            
+            .price {
+                font-size: 1.3rem;
+            }
+            
+            .ticket-btn {
+                font-size: 0.9rem;
             }
         }
     </style>
@@ -520,7 +635,7 @@
 
         <div class="content">
             
-            <!-- ЛЕВАЯ ЧАСТЬ -->
+            <!-- ЛЕВАЯ ЧАСТЬ (ИСПРАВЛЕНО) -->
             <div class="main-info">
                 
                 <!-- ТИП -->
@@ -532,7 +647,7 @@
                     <span>FEST 2026</span>
                 </div>
 
-                <!-- ДАТА -->
+                <!-- ДАТА (ИСПРАВЛЕНО) -->
                 <div class="date-block">
                     <div class="date-day">25-26</div>
                     <div class="date-month">ИЮЛЯ</div>
@@ -540,7 +655,7 @@
                     <div class="time">11:00 – 21:00</div>
                 </div>
 
-                <!-- МЕСТО -->
+                <!-- МЕСТО (ИСПРАВЛЕНО) -->
                 <div class="venue">
                     <div class="venue-name">Стадион</div>
                     <div class="venue-address">ул. Адресная, 24 · Якутск</div>
@@ -549,10 +664,10 @@
 
             </div>
 
-            <!-- ПРАВАЯ ЧАСТЬ -->
+            <!-- ПРАВАЯ ЧАСТЬ (ИСПРАВЛЕНО) -->
             <div class="side-info">
                 
-                <!-- ГОСТИ -->
+                <!-- ГОСТИ (ИСПРАВЛЕНО) -->
                 <div>
                     <div class="guests-title">специальные гости</div>
                     <div class="guest-item">
@@ -571,7 +686,7 @@
                     </div>
                 </div>
 
-                <!-- ПРОГРАММА -->
+                <!-- ПРОГРАММА (ИСПРАВЛЕНО) -->
                 <div>
                     <div class="guests-title">программа</div>
                     <div class="program-item">
@@ -592,28 +707,28 @@
                     </div>
                 </div>
 
-                <!-- КОНКУРСЫ -->
+                <!-- КОНКУРСЫ (ИСПРАВЛЕНО) -->
                 <div class="contest-badge">
                     🏆 призовой фонд 100 000 ₽
                 </div>
 
-                <!-- ЦЕНА -->
+                <!-- ЦЕНА (ИСПРАВЛЕНО) -->
                 <div class="price-block">
                     <div class="price">800 ₽ <small>/ день</small></div>
-                    <div class="price" style="font-size: 1.5rem;">1400 ₽ · абонемент</div>
+                    <div class="price" style="font-size: 1.3rem;">1400 ₽ · абонемент</div>
                 </div>
 
-                <!-- КНОПКА -->
+                <!-- КНОПКА (ИСПРАВЛЕНО) -->
                 <a href="#" class="ticket-btn">🎫 купить билет</a>
 
-                <!-- КОНТАКТЫ -->
+                <!-- КОНТАКТЫ (ИСПРАВЛЕНО) -->
                 <div class="contacts">
                     <a href="#" class="contact-link" target="_blank">✈️ Telegram</a>
                     <a href="#" class="contact-link" target="_blank">📱 MAX</a>
                     <a href="#" class="contact-link">📞 инфо</a>
                 </div>
 
-                <!-- QR -->
+                <!-- QR (ИСПРАВЛЕНО) -->
                 <div class="qr-section">
                     <div class="qr-code">
                         <svg viewBox="0 0 100 100">
@@ -637,7 +752,7 @@
 
             </div>
 
-            <!-- ПОДВАЛ -->
+            <!-- ПОДВАЛ (ИСПРАВЛЕНО) -->
             <div class="footer-note">
                 0+ · организовано Anime Club Yakutsk · 2026
             </div>
